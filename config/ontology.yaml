@@ -1,0 +1,23 @@
+entities:
+  - Company
+  - Report
+  - Section
+  - Metric
+  - Measure
+  - Target
+  - Assurance
+  - Claim
+  - Evidence
+  - Standard
+  - Location
+  - Methodology
+
+relations:
+  - Company:PUBLISHED:Report
+  - Report:HAS_SECTION:Section
+  - Section:MENTIONS:Metric
+  - Metric:MEASURED_AS:Measure
+  - Measure:COVERING:Location
+  - Measure:SUPPORTED_BY:Evidence
+  - Target:COVERS:Metric
+  - Report:ASSURED_BY:Assurance
