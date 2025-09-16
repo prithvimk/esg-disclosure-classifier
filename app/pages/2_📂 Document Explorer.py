@@ -1,5 +1,8 @@
 import streamlit as st
 import requests
+import os
+
+API_URL = os.getenv("API_URL", "http://localhost:8000")
 
 st.title("📂 Document Explorer")
 
@@ -9,13 +12,15 @@ if uploaded_file:
     files = {"file": (uploaded_file.name, uploaded_file.getvalue(), uploaded_file.type)}
     
     # Send the file to the FastAPI endpoint
-    response = requests.post("http://localhost:8000/uploadfile/", files=files)
+    response = requests.post(f"{API_URL}/uploadfile/", files=files)
     
     if response.status_code == 200:
         st.success(f"File uploaded and processed: {response.json()['filename']}")
         st.write(response.json()['message'])
     else:
         st.error(f"Error processing file: {response.json().get('error', 'Unknown error')}")
+
+    
 
     
 
