@@ -2,14 +2,39 @@ from docling.document_converter import DocumentConverter
 from docling.datamodel.pipeline_options import PdfPipelineOptions
 from docling.chunking import HybridChunker
 
-def convert_document():
+from pathlib import Path
+from vector_service import create_embeddings
+
+
+def convert_document(file_path: Path):
     '''
-    Convert documents using Docling
+    Convert documents using Docling and return chunked texts
     '''
 
     converter = DocumentConverter()
     chunker = HybridChunker()
 
-    doc = converter.convert(r'..\..\config\esg_reveal_prompts.pdf').document
+    print("convert doc is running")
 
-    texts = [chunk.text for chunk in chunker.chunk(doc)]
+    try:
+        doc = converter.convert(file_path).document
+        chunked_texts = [chunk.text for chunk in chunker.chunk(doc)]
+        return chunked_texts
+    except Exception as e:
+        return e.text
+    
+def ingest_pdf(file_path: Path):
+    '''
+    Performs the following steps:
+    1. Converts PDF to DoclingDocument and chunks text
+    2. Creates embeddings using Ollama
+    3. Stores embeddings in MilvusDB
+    '''
+
+    chunked_texts = convert_document(file_path)
+
+    embeddings = [create_embeddings(chunk) for chunk in chunked_texts]
+
+    
+
+    pass

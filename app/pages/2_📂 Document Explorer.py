@@ -15,10 +15,11 @@ if uploaded_file:
     response = requests.post(f"{API_URL}/uploadfile/", files=files)
     
     if response.status_code == 200:
-        st.success(f"File uploaded and processed: {response.json()['filename']}")
-        st.write(response.json()['message'])
-    else:
-        st.error(f"Error processing file: {response.json().get('error', 'Unknown error')}")
+        try:
+            st.success(f"File uploaded and processed: {response.json()['filename']}")
+            st.write(response.json()['message'])
+        except:
+            st.error(f"Error processing file: {response.json().get('error', 'Unknown error')}")
 
     
 
