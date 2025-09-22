@@ -3,7 +3,7 @@ from docling.datamodel.pipeline_options import PdfPipelineOptions
 from docling.chunking import HybridChunker
 
 from pathlib import Path
-from vector_service import create_embeddings
+from vector_service import create_embeddings, MilvusManager
 
 
 def convert_document(file_path: Path):
@@ -35,6 +35,9 @@ def ingest_pdf(file_path: Path):
 
     embeddings = [create_embeddings(chunk) for chunk in chunked_texts]
 
-    
+    milvus = MilvusManager()
+    collection = milvus.get_collection()
 
-    pass
+    data = [embeddings, chunked_texts]  
+    collection.insert(data)
+    collection.flush()

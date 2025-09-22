@@ -2,7 +2,7 @@ import ollama
 from pymilvus import MilvusClient, Collection, connections, DataType, FieldSchema, CollectionSchema
 import os
 
-MILVUS_HOST = os.getenv('MILVUS_HOST', "http://localhost")
+MILVUS_HOST = os.getenv('MILVUS_HOST', "localhost")
 MILVUS_PORT = os.getenv('MILVUS_PORT', '19530')
 COLLECTION_NAME = os.getenv('COLLECTION_NAME', 'report_chunks')
 EMBED_DIM = os.getenv('COLLECTION_NAME', 1024)   
@@ -20,11 +20,12 @@ class MilvusManager:
         return cls._instance
 
     def _connect(self):
-        """Establish a single connection to Milvus."""
+        '''Establish a single connection to Milvus.'''
         connections.connect("default", host=MILVUS_HOST, port=MILVUS_PORT)
+        print(connections.list_connections())
 
     def _init_collection(self):
-        """Initialize or load collection schema once."""
+        '''Initialize or load collection schema once.'''
         fields = [
             FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
             FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=EMBED_DIM),
@@ -45,7 +46,7 @@ class MilvusManager:
             )
 
     def get_collection(self) -> Collection:
-        """Return the active collection object."""
+        '''Return the active collection object.'''
         return self._collection
     
 

@@ -9,14 +9,6 @@ from paths import UPLOADS
 
 app = FastAPI(title="ESG GraphRAG API")
 
-@app.get("/graph/query")
-def graph_query(cypher: str):
-    return run_cypher(cypher)
-
-@app.get("/search")
-def search(query: str):
-    return semantic_search(query)
-
 @app.post("/uploadfile/")
 async def create_upload_file(file: UploadFile = File(...)):
     try:
