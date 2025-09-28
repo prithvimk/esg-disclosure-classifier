@@ -7,6 +7,16 @@ MILVUS_PORT = os.getenv('MILVUS_PORT', '19530')
 COLLECTION_NAME = os.getenv('COLLECTION_NAME', 'report_chunks')
 EMBED_DIM = os.getenv('COLLECTION_NAME', 1024)   
 
+def create_embeddings(text_chunk: str):
+    '''
+    Create embeddings using Ollama APIs
+    '''
+
+    return ollama.embed(
+        model='mxbai-embed-large',
+        input=text_chunk
+    )['embeddings'][0]
+
 
 class MilvusManager:
     _instance = None
@@ -49,16 +59,26 @@ class MilvusManager:
         '''Return the active collection object.'''
         return self._collection
     
+    def semantic_search(self, query: str, top_k: int = 5):
+        '''
+        
+        '''
+        vector = create_embeddings(query)
 
-def create_embeddings(text_chunk: str):
-    '''
-    Create embeddings using Ollama APIs
-    '''
+        collection = self.get_collection()
+        collection.load()
 
-    return ollama.embed(
-        model='mxbai-embed-large',
-        input=text_chunk
-    )['embeddings'][0]
+        results = collection.search(
+            data=[vector],
+            anns_field="embedding",
+            param={"metric_type": "COSINE", "params": {"nprobe": 10}},
+            limit=top_k,
+            output_fields=["text"]
+        )
+
+        return [hit.entity.get("text") for hit in results[0]]
+
+
 
 
 

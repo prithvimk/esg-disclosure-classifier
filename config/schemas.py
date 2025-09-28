@@ -1,6 +1,31 @@
 from pydantic import BaseModel
 from typing import List, Optional
 
+# llm output format models
+# quantitative: {"Disclosure": <0 or 1>, "Data": {"KPI": "{kpi}", "Topic": "{topic}", "Value":"<value>", "Unit": "<unit>"}}
+# qualititative: {"Disclosure": <0 or 1>, "Data": {"KPI": "{kpi}", "Topic": "{topic}", "Target":"<target>", "Action": "<action>"}}
+
+class ESGQuantData(BaseModel):
+  kpi: str
+  topic: str
+  value: float
+  unit: str
+
+class ESGQuantResponse(BaseModel):
+  disclosure: bool
+  data: list[ESGQuantData]
+
+class ESGQualData(BaseModel):
+  kpi: str
+  topic: str
+  target: str
+  action: str
+
+class ESGQualResponse(BaseModel):
+  disclosure: bool
+  data: list[ESGQualData]
+
+# graph models - WIP
 class Provenance(BaseModel):
     doc_id: str
     page: int

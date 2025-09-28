@@ -1,0 +1,17 @@
+{
+    "disclosure": true,
+    "data": [
+        {
+            "kpi": "Direct (Scope 1) and energy indirect (Scope 2) greenhouse gas emissions (in tonnes)",
+            "topic": "[Direct (Scope 1), Energy Indirect (Scope 2)]",
+            "value": 208,
+            "unit": "kt CO2"
+        },
+        {
+            "kpi": "Direct (Scope 1) and energy indirect (Scope 2) greenhouse gas emissions (in tonnes)",
+            "topic": "[Direct (Scope 1), Energy Indirect (Scope 2)]",
+            "value": 211,
+            "unit": "kt CO2"
+        }
+    ]
+}
