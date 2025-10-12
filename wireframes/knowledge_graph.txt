@@ -1,0 +1,19 @@
+ -------------------------------------------------------------
+| Knowledge Graph Viewer                                     |
+ -------------------------------------------------------------
+| [Company Dropdown] [ESG Type Filter: E / S / G] [Year]     |
+ -------------------------------------------------------------
+|   GRAPH VIEW                                               |
+|   (Nodes & Edges)                                          |
+|   • Blue = Companies                                       |
+|   • Green = Environment metrics                            |
+|   • Yellow = Regulations                                   |
+|   • Red = Social factors                                   |
+|   • Purple = Governance                                    |
+|                                                            |
+|   (Click node → expand relationships)                      |
+ -------------------------------------------------------------
+|   Evidence Panel                                           |
+|   "ABC Corp reduced CO₂ emissions by 15% in 2024"          |
+|   Source: ABC Sustainability Report, p. 14                 |
+ -------------------------------------------------------------

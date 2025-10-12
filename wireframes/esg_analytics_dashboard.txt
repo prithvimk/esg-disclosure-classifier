@@ -1,0 +1,14 @@
+ -------------------------------------------------------------
+| ESG Analytics                                              |
+ -------------------------------------------------------------
+| [Filters: Company | Sector | Year Range]                   |
+ -------------------------------------------------------------
+|   VISUALIZATIONS                                           |
+|   - Line Chart: CO₂ reductions over time                   |
+|   - Bar Chart: Gender diversity mentions by sector         |
+|   - Map: ESG actions by geography                          |
+ -------------------------------------------------------------
+|   COMPARISON PANEL                                         |
+|   Compare: [Company A] vs [Company B]                      |
+|   → Side-by-side ESG metrics                               |
+ -------------------------------------------------------------

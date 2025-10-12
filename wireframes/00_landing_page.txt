@@ -1,0 +1,16 @@
+ -------------------------------------------------------------
+| ESG Knowledge Graph Dashboard                              |
+ -------------------------------------------------------------
+| [Search bar: "Find companies reducing emissions in 2023"]  |
+ -------------------------------------------------------------
+|  KPI CARDS                                                 |
+|  [Total Entities: 1523] [Companies: 432] [Regulations: 56] |
+|  [Relationships: 8902] [Countries: 28]                     |
+ -------------------------------------------------------------
+|  HIGHLIGHTS                                                |
+|  • Top 5 Companies by CO₂ Reduction                        |
+|  • Most Cited Regulation: EU Taxonomy                      |
+|  • Sectors with highest ESG mentions                       |
+ -------------------------------------------------------------
+|  [View Graph] [Explore Documents] [Run Analytics]          |
+ -------------------------------------------------------------

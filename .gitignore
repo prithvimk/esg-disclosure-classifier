@@ -211,5 +211,6 @@ __marimo__/
 *.xlsx
 *.csv
 *.zip
-*.txt
 scratch/
+!config/ESG_Metadata.xlsx
+!src/notebooks/sample.pdf
