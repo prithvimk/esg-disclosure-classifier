@@ -1,0 +1,50 @@
+{
+    "E1": {
+        "E1-1": {
+            "14": [
+                {
+                    "AR": "AR 1",
+                    "Name": "Disclosure of transition plan  for climate change mitigation",
+                    "datatype": "narrative",
+                    "dp_type": "nan"
+                }
+            ],
+            "16 a": [
+                {
+                    "AR": "AR 2",
+                    "Name": "Explanation of how targets are compatible with limiting of global warming to one and half degrees Celsius in line with Paris Agreement",
+                    "datatype": "narrative",
+                    "dp_type": "nan"
+                }
+            ],
+            "16 b": [
+                {
+                    "AR": "nan",
+                    "Name": "Disclosure of decarbonisation levers and key action",
+                    "datatype": "narrative",
+                    "dp_type": "nan"
+                }
+            ],
+            "16 c": [
+                {
+                    "AR": "nan",
+                    "Name": "Disclosure of significant operational expenditures (Opex) and (or) capital expenditures (Capex) required for implementation of action plan",
+                    "datatype": "narrative",
+                    "dp_type": "nan"
+                },
+                {
+                    "AR": "nan",
+                    "Name": "Financial resources allocated to action plan (OpEx)",
+                    "datatype": "monetary",
+                    "dp_type": "nan"
+                },
+                {
+                    "AR": "nan",
+                    "Name": "Financial resources allocated to action plan (CapEx)",
+                    "datatype": "monetary",
+                    "dp_type": "nan"
+                }
+            ]
+        }
+    }
+}
