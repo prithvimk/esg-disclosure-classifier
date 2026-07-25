@@ -1,0 +1,20 @@
+[project]
+name = "esg-disclosure-classifier"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dash>=4.1.0",
+    "earthengine-api>=1.7.26",
+    "geopandas>=1.1.3",
+    "ipykernel>=7.2.0",
+    "leafmap>=0.62.0",
+    "llama-index>=0.14.21",
+    "llama-index-embeddings-google-genai>=0.1.0",
+    "llama-index-graph-stores-neo4j>=0.7.0",
+    "llama-index-llms-google-genai>=0.9.5",
+    "llama-index-node-parser-docling>=0.4.2",
+    "llama-index-readers-docling>=0.4.2",
+    "rasterio>=1.5.0",
+]
